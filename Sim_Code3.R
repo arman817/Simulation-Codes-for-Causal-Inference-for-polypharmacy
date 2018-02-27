@@ -408,7 +408,10 @@ func <- function(n,Seed_Val,a,b,c,d,e,f,g,h){
   #using GBM for the entire data
   est1 <- Softmax_Regression_Value(Truncate_Data1,Simulate_Data,n)
   est2 <- Softmax_Regression_Value(Truncate_Data2,Simulate_Data,n)
-  est <- c(est1,est2)
+  est3 <- SVM_Value(Truncate_Data1,Simulate_Data,n)
+  est4 <- SVM_Value(Truncate_Data2,Simulate_Data,n)
+  est5 <- Twang_Package_Value(Simulate_Data,n)
+  est <- c(est1,est2,est3,est4,est5)
   return(est)
 }
 
