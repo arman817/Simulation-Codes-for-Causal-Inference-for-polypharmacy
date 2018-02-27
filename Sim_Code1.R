@@ -407,7 +407,9 @@ func <- function(n,Seed_Val,a,b,c,d,e,f,g,h,j,k){
   Simulate_Data <- Generate_Data(n,Seed_Val,a,b,c,d,e,f,g,h,j,k)
   #Estimate the probability of treatment successes using SVM, Softmax Regression and GBM
   est1 <- Softmax_Regression_Value(Simulate_Data,n,a,b,c,d,e,f,g,h)
-  est <- c(est1)
+  est2 <- SVM_Value(Simulate_Data,n,a,b,c,d,e,f,g,h)
+  est3 <- Twang_Package_Value(Simulate_Data,n,a,b,c,d,e,f,g,h)
+  est <- c(est1,est2,est3)
   return(est)
 }
 
