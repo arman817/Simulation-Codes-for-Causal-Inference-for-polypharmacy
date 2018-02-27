@@ -283,7 +283,8 @@ Softmax_Regression_Value <- function(data_obt,Original_Data,n){
 func <- function(n,Seed_Val,a,b,c,d,e,f,g,h){
   Simulate_Data <- Generate_Data(n,Seed_Val,a,b,c,d,e,f,g,h)
   est1 <- Softmax_Regression_Value(Simulate_Data,Simulate_Data,n)
-  est <- c(est1)
+  est2 <- SVM_Value(Simulate_Data,Simulate_Data,n)
+  est <- c(est1,est2)
   return(est)
 }
 
