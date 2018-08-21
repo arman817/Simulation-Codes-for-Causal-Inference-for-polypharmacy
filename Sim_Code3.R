@@ -6,11 +6,11 @@ start=as.numeric(args[4]);
 end=as.numeric(args[5]);
 
 #This code computes the causal estimates for the data using 
-#Softmax Regression and SVM for the subsetted data as explained in Section 3.4 and 
-#using GBM for the entire data
+#Softmax Regression and SVM for the subsetted data as explained in 
+#Section 2 of the Supplementary Materials and using GBM for the entire data
 
 ##############################################################
-#Code for computing causal estimates for Data Generation Scenario II as mentioned in Section 3.1 
+#Code for computing causal estimates for Data Generation Scenario II 
 ##############################################################
 library(bindata)
 library(softmaxreg)
@@ -404,7 +404,7 @@ func <- function(n,Seed_Val,a,b,c,d,e,f,g,h){
   Truncate_Data1 <- Trunc_Data1(Simulate_Data,n)
   Truncate_Data2 <- Trunc_Data2(Simulate_Data,n)
   #Estimate the probability of treatment successes using 
-  #Softmax Regression and SVM for the subsetted data as explained in Section 3.4 and 
+  #Softmax Regression and SVM for the subsetted data as explained in Section 2 of the Supplementary Materials and 
   #using GBM for the entire data
   est1 <- Softmax_Regression_Value(Truncate_Data1,Simulate_Data,n)
   est2 <- Softmax_Regression_Value(Truncate_Data2,Simulate_Data,n)
@@ -415,8 +415,8 @@ func <- function(n,Seed_Val,a,b,c,d,e,f,g,h){
   return(est)
 }
 
-#n denotes the number of observation in each study. As mentioned in Section 3.4
-#simulations were carried out by setting the values of n as 500.
+#n denotes the number of observation in each study. As mentioned in Section 2 of the Supplementary Materials
+#Simulations were carried out by setting the values of n as 500.
 n <- 500
 for(p in start:end){
   Val <- func(n,p,1,1,1,1,1,1,1,1)
