@@ -8,7 +8,7 @@ end=as.numeric(args[5]);
 #This code computes the causal estimates for the data using 
 #Softmax Regression and SVM for the entire data
 ##############################################################
-#Code for computing causal estimates for Data Generation Scenario II as mentioned in Section 3.1 
+#Code for computing causal estimates for Data Generation Scenario II as mentioned in Section 2 of the Supplementary Materials
 ##############################################################
 library(bindata)
 library(softmaxreg)
@@ -288,7 +288,7 @@ func <- function(n,Seed_Val,a,b,c,d,e,f,g,h){
   return(est)
 }
 
-#n denotes the number of observation in each study. As mentioned in Section 3.4
+#n denotes the number of observation in each study. As mentioned in Section 2 of the Supplementary Materials
 #simulations were carried out by setting the values of n as 500.
 n <- 500
 for(p in start:end){
