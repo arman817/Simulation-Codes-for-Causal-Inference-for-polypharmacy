@@ -325,10 +325,10 @@ GBM_Value <- function(data_obta,n,a,b,c,d,e,f,g,h){
   R_1 <- data_obta[,19]
   R_2 <- data_obta[,20]
   Y <- data_obta[,18]
-  G_comp1 <- data_obt[,25]
-  G_comp2 <- data_obt[,26]
-  G_comp3 <- data_obt[,21]
-  G_comp4 <- data_obt[,22]
+  G_comp1 <- data_obta[,25]
+  G_comp2 <- data_obta[,26]
+  G_comp3 <- data_obta[,21]
+  G_comp4 <- data_obta[,22]
   Medication <- data_obta[,14:17]
   Cov <- data_obta[,2:13]
   data_req <- data.frame(data_obta)
@@ -408,7 +408,7 @@ func <- function(n,Seed_Val,a,b,c,d,e,f,g,h,j,k){
   #Estimate the probability of treatment successes using SVM, Softmax Regression and GBM
   est1 <- Softmax_Regression_Value(Simulate_Data,n,a,b,c,d,e,f,g,h)
   est2 <- SVM_Value(Simulate_Data,n,a,b,c,d,e,f,g,h)
-  est3 <- Twang_Package_Value(Simulate_Data,n,a,b,c,d,e,f,g,h)
+  est3 <- GBM_Value(Simulate_Data,n,a,b,c,d,e,f,g,h)
   est <- c(est1,est2,est3)
   return(est)
 }
